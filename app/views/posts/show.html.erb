@@ -1,0 +1,9 @@
+<%= render 'header' %>
+<h1> <%= @post.title%>:</h1><br>
+
+<p><% @post.content %></p>
+
+<p><strong>This many people liked this post:</strong> <%= @post.likes %></p><br>
+<%# <% button_to 'Like it!', like_path, method: :put %>
+<%= link_to "Meet the author: #{@post.blogger.name}", blogger_path(@post.blogger_id) %><br>
+<%= link_to "Read more about #{@post.destination.name}", destination_path(@post.destination_id) %><br>
