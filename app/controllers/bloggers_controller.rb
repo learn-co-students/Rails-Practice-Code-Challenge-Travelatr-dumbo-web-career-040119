@@ -12,7 +12,7 @@ class BloggersController < ApplicationController
     def create
       @blogger = Blogger.new(blogger_params)
       if @blogger.save
-        redirect_to
+        redirect_to :posts
       else
         render :new
       end
