@@ -1,0 +1,5 @@
+<%= render 'header' %>
+<h1> Meet <%= @blogger.name%>:</h1><br>
+
+<p><strong>Total likes:</strong> <%= @blogger.total_likes %></p><br>
+<%= link_to "Check out this post: #{@blogger.most_liked_post.title}", post_path(@blogger.most_liked_post) %>

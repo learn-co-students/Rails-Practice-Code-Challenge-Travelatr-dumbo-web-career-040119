@@ -1,0 +1,13 @@
+<ol class="errors">
+  <% @post.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ol>
+
+<%= form_for @post do |f| %>
+Title: <%= f.text_field :title %><br><br>
+Content: <%= f.text_area :content %><br><br>
+Blogger: <%= f.collection_select :blogger_id, Blogger.all, :id, :name %><br><br>
+Destination: <%= f.collection_select :destination_id, Destination.all, :id, :name %><br><br>
+<%= f.submit %>
+<% end %>
