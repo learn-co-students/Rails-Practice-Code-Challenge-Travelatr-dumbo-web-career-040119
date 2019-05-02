@@ -27,12 +27,4 @@ class Blogger < ApplicationRecord
   end
 
 
-
-
-  #
-  # def top_destinations
-  #
-  #   self.posts.map(&:destination)
-  # end
-
 end
