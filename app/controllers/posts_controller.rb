@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
     def create
       @post = Post.new(post_params)
-      @blogger = Blogger.find(@post.blogger_id)
+      @blogger = Blogger.find(@post.blogger_id) 
       if @post.save
         redirect_to @post
       else
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     private
 
       def post_params
-        params.permit(:title, :content, :likes, :blogger_id, :destination_id)
+        params.require(:post).permit(:title, :content, :blogger_id, :destination_id)
       end
 
 

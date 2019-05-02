@@ -11,7 +11,7 @@ class Blogger < ApplicationRecord
   end
 
   def sum
-   inject(0) { |sum, x| sum + x }
+   inject(0){ |sum, x| sum + x }
   end
 
   def total_likes
@@ -26,7 +26,7 @@ class Blogger < ApplicationRecord
     self.posts.map(&:destination)
   end
 
-  
+
 
 
   #
