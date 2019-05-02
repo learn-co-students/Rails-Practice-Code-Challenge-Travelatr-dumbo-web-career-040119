@@ -6,7 +6,7 @@ class DestinationsController < ApplicationController
   end
 
   def new
-    @destination = Destination.new(destination_params)
+    @destination = Destination.new
   end
 
   def create

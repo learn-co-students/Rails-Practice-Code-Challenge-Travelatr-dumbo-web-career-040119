@@ -1,5 +1,7 @@
 <%= render 'header' %>
 <h1>Add a Post! </h1>
+
+
 <ol class="errors">
   <% @post.errors.full_messages.each do |error| %>
   <li><%= error %></li>

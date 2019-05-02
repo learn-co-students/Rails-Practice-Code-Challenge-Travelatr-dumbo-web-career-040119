@@ -2,4 +2,9 @@
 <h1> Meet <%= @blogger.name%>:</h1><br>
 
 <p><strong>Total likes:</strong> <%= @blogger.total_likes %></p><br>
+<% if  !@blogger.most_liked_post%>
+<%= "This blogger has not yet written much... Check out the others!"%>
+<%= button_to "Our bloggers", bloggers_path, method: :get %>
+<% else %>
 <%= link_to "Check out this post: #{@blogger.most_liked_post.title}", post_path(@blogger.most_liked_post) %>
+<% end%>

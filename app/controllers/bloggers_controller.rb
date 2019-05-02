@@ -6,14 +6,15 @@ class BloggersController < ApplicationController
     end
 
     def new
-      @blogger = Blogger.new(blogger_params)
+      @blogger = Blogger.new
     end
 
     def create
-      if @blogger = Blogger.create(blogger_params)
-        redirect_to @posts
+      @blogger = Blogger.new(blogger_params)
+      if @blogger.save
+        redirect_to @blogger
       else
-        render :new
+        render :new 
       end
     end
 

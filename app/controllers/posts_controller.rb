@@ -6,19 +6,21 @@ class PostsController < ApplicationController
     end
 
     def new
-      @post = Post.new(post_params)
+      @post = Post.new
     end
 
     def create
-      if @post = Post.create(post_params)
-        @blogger = Blogger.find(@post.blogger_id)
-        redirect_to @blogger
+      @post = Post.new(post_params)
+      @blogger = Blogger.find(@post.blogger_id)
+      if @post.save
+        redirect_to @post
       else
         render :new
     end
+  end
 
     def update
-      if get_post.update(post_params)
+      if @post.update(post_params)
         redirect_to @post
       else
         render :edit

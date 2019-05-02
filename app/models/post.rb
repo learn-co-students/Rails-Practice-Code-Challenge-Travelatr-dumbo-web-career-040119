@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 
   # def like
   # self.likes += 1
+  # self.save
   # end
 
   #
