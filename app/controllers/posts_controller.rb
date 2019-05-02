@@ -10,9 +10,11 @@ class PostsController < ApplicationController
     end
 
     def create
-      @post = Post.create(post_params)
-      @blogger = Blogger.find(@post.blogger_id)
-      redirect_to @blogger
+      if @post = Post.create(post_params)
+        @blogger = Blogger.find(@post.blogger_id)
+        redirect_to @blogger
+      else
+        render :new
     end
 
     def update
